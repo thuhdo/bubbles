@@ -40,11 +40,12 @@ public class TimeAppWidget extends AppWidgetProvider {
         Date date = calendar.getTime();
         calendar.setTime(date);
 
-        if (calendar.get(Calendar.MINUTE) >= 30)
+        if (calendar.get(Calendar.MINUTE) >= 30) {
             calendar.add(Calendar.HOUR, 1);
+        }
 
         date = calendar.getTime();
-        SimpleDateFormat sdf = new SimpleDateFormat("K a");
+        SimpleDateFormat sdf = new SimpleDateFormat("h a");
         String formattedTime = sdf.format(date);
 
         return formattedTime;
